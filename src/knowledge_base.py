@@ -25,10 +25,10 @@ def get_dish_by_label(label, dishes):
 
 def dish_to_text(dish):
     """Crea il testo utilizzato per il confronto semantico."""
-    ingredients = ", ".join(dish["ingredients"])
+    examples = ". ".join(dish.get("search_examples", []))
 
     return (
         f'{dish["name"]}. {dish["description"]} '
-        f'Ingredienti principali: {ingredients}. '
-        f'Caratteristiche: {dish["semantic_tags"]}.'
+        f'Caratteristiche: {dish["semantic_tags"]}. '
+        f'Richieste compatibili: {examples}.'
     )
