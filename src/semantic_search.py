@@ -13,7 +13,22 @@ class DishSearch:
     def __init__(self, dishes, model_name=MODEL_NAME):
         self.dishes = dishes
         self.model = SentenceTransformer(model_name)
-        self.texts = [dish_to_text(dish) for dish in dishes]
+
+        self.texts = []
+        self.text_dish_indexes = []
+
+        for dish_index, dish in enumerate(dishes):
+            candidate_texts = [
+                dish_to_text(dish),
+                *dish.get("search_examples", []),
+            ]
+
+            self.texts.extend(candidate_texts)
+            self.text_dish_indexes.extend(
+                [dish_index] * len(candidate_texts)
+            )
+
+        self.text_dish_indexes = np.array(self.text_dish_indexes)
         self.embeddings = self.model.encode(
             self.texts,
             normalize_embeddings=True,
@@ -28,15 +43,22 @@ class DishSearch:
             normalize_embeddings=True,
         )[0]
 
-        # Con vettori normalizzati il prodotto scalare coincide
-        # con la cosine similarity.
-        scores = self.embeddings @ query_embedding
-        best_indexes = np.argsort(scores)[::-1][:top_k]
+        # Ogni piatto ha una descrizione e alcune richieste di esempio.
+        # Come punteggio del piatto uso il confronto migliore.
+        text_scores = self.embeddings @ query_embedding
+        dish_scores = np.array(
+            [
+                text_scores[self.text_dish_indexes == dish_index].max()
+                for dish_index in range(len(self.dishes))
+            ]
+        )
+
+        best_indexes = np.argsort(dish_scores)[::-1][:top_k]
 
         return [
             {
                 "dish": self.dishes[index],
-                "score": float(scores[index]),
+                "score": float(dish_scores[index]),
             }
             for index in best_indexes
         ]
