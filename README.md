@@ -1,79 +1,34 @@
 # ChefBot AI
 
-Progetto finale del modulo 5 del Master in Python, AI e Machine Learning.
+Questo è il progetto finale del modulo 5 del master, dedicato a Computer Vision e NLP.
 
-L'obiettivo è riconoscere un piatto a partire da una fotografia e collegare la previsione a una piccola base di conoscenza. Il progetto comprende anche una ricerca semantica: l'utente può descrivere ciò che vorrebbe mangiare, per esempio "qualcosa di fresco e leggero", e ricevere il piatto più simile tra quelli disponibili.
+L'idea è quella di partire dalla foto di un piatto, provare a riconoscerlo e mostrare alcune informazioni che Food101 non contiene, come ingredienti, descrizione e valori nutrizionali. Ho aggiunto anche una ricerca testuale per richieste del tipo *vorrei qualcosa di fresco* oppure *cerco un dolce cremoso*.
 
-## Classi utilizzate
+Per non rendere l'addestramento troppo pesante ho lavorato su 12 classi di Food101: bruschetta, caprese salad, cheesecake, greek salad, lasagna, paella, panna cotta, pizza, ravioli, spaghetti bolognese, spaghetti carbonara e tiramisù.
 
-Per limitare i tempi di addestramento ho selezionato 12 categorie di Food101:
+## Parte di classificazione
 
-- bruschetta
-- caprese salad
-- cheesecake
-- greek salad
-- lasagna
-- paella
-- panna cotta
-- pizza
-- ravioli
-- spaghetti bolognese
-- spaghetti carbonara
-- tiramisù
+Il modello usato è MobileNetV2 con i pesi ImageNet. Nel notebook `01_training_mobilenet_food101.ipynb` la rete viene usata prima come base congelata e successivamente vengono sbloccati gli ultimi livelli per il fine-tuning.
 
-La selezione comprende primi piatti, piatti freschi e dessert. Alcune classi sono abbastanza simili tra loro e permettono di osservare gli errori del classificatore nella matrice di confusione.
+Il notebook comprende anche i grafici di accuracy e loss e la matrice di confusione, che mi serve soprattutto per controllare quali piatti vengono confusi tra loro.
 
-## Struttura del progetto
+## Knowledge base e ricerca
 
-```text
-epicode-chefbot-ai/
-├── data/
-│   └── knowledge_base.json
-├── models/
-│   ├── class_names.json
-│   └── README.md
-├── notebooks/
-│   ├── 01_training_mobilenet_food101.ipynb
-│   └── 02_ricerca_semantica.ipynb
-├── src/
-│   ├── classifier.py
-│   ├── knowledge_base.py
-│   └── semantic_search.py
-├── app.py
-└── requirements.txt
-```
+Le informazioni aggiuntive sui piatti sono nel file `data/knowledge_base.json`. Non provengono da Food101 e sono valori indicativi, soprattutto per la parte nutrizionale.
 
-Il primo notebook contiene il caricamento di Food101, il transfer learning, il fine-tuning e la valutazione. Il secondo serve a controllare separatamente il funzionamento della ricerca semantica.
+Nel secondo notebook ho provato la ricerca semantica. Le richieste vengono trasformate in embeddings con un modello Sentence Transformers multilingua e confrontate con le descrizioni dei piatti. In questo modo la ricerca non dipende dalla presenza della stessa parola nel testo.
 
-## Come funziona
+## File principali
 
-### Riconoscimento dell'immagine
+- `notebooks/01_training_mobilenet_food101.ipynb`: training e valutazione del classificatore
+- `notebooks/02_ricerca_semantica.ipynb`: alcune prove della ricerca testuale
+- `app.py`: interfaccia Streamlit
+- `src/`: funzioni usate dall'app
+- `data/knowledge_base.json`: schede dei 12 piatti
 
-Il classificatore utilizza MobileNetV2 con pesi ImageNet. Durante la prima fase la base convoluzionale rimane congelata e vengono addestrati soltanto i nuovi livelli finali. In seguito vengono sbloccati gli ultimi 20 livelli per un breve fine-tuning con learning rate più basso.
+## Avvio
 
-Il modello riceve immagini RGB ridimensionate a 224 x 224 pixel e restituisce una probabilità per ognuna delle 12 classi.
-
-### Knowledge base
-
-Food101 mette a disposizione immagini ed etichette, ma non contiene ingredienti o valori nutrizionali. Queste informazioni sono state inserite manualmente nel file `data/knowledge_base.json`.
-
-Ogni scheda contiene:
-
-- nome del piatto;
-- breve descrizione;
-- ingredienti principali;
-- valori nutrizionali indicativi;
-- alcune caratteristiche utili per la ricerca.
-
-### Ricerca semantica
-
-Le descrizioni dei piatti e la richiesta dell'utente vengono trasformate in embeddings con il modello multilingua `paraphrase-multilingual-MiniLM-L12-v2`.
-
-Gli embeddings sono normalizzati e confrontati tramite prodotto scalare, che in questo caso corrisponde alla cosine similarity. Non è quindi necessario che la richiesta contenga le stesse parole presenti nella scheda.
-
-## Installazione
-
-Da PowerShell, dopo aver scaricato la repository:
+Per creare l'ambiente da PowerShell:
 
 ```powershell
 python -m venv .venv
@@ -81,43 +36,12 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Food101 viene scaricato automaticamente da TensorFlow Datasets quando si esegue il notebook di training. Il download e l'addestramento possono richiedere tempo.
+Il dataset viene scaricato da TensorFlow Datasets quando si esegue il primo notebook.
 
-## Addestramento
-
-Aprire ed eseguire in ordine:
-
-```text
-notebooks/01_training_mobilenet_food101.ipynb
-```
-
-Alla fine del notebook viene creato il file:
-
-```text
-models/chefbot_mobilenet.keras
-```
-
-Non ho inserito un modello già addestrato perché le metriche riportate nel progetto devono derivare da un'esecuzione reale.
-
-## Avvio dell'app
-
-Dalla cartella principale del progetto:
+Terminato l'addestramento, il modello viene salvato come `models/chefbot_mobilenet.keras`. A quel punto l'app può essere avviata dalla cartella principale:
 
 ```powershell
 streamlit run app.py
 ```
 
-L'app contiene due sezioni:
-
-1. caricamento di una fotografia e visualizzazione della scheda del piatto riconosciuto;
-2. ricerca di un piatto attraverso una descrizione libera.
-
-Se il modello non è ancora presente, la ricerca semantica resta utilizzabile e la sezione di riconoscimento mostra un avviso.
-
-## Limiti
-
-Il classificatore conosce soltanto le 12 classi selezionate. Se viene caricata la foto di un piatto diverso, sceglierà comunque una delle categorie conosciute.
-
-Anche calorie e nutrienti sono valori medi indicativi: possono cambiare in base alla ricetta, alla quantità degli ingredienti e alla porzione.
-
-Un possibile miglioramento sarebbe aggiungere una soglia minima di confidenza, aumentare il numero di piatti e verificare la ricerca semantica su un insieme di richieste raccolte da utenti reali.
+Al momento il classificatore può scegliere solo tra le 12 classi usate nel training. Una foto appartenente a una categoria diversa verrebbe quindi associata comunque a uno dei piatti conosciuti.
