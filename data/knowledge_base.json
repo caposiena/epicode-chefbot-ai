@@ -1,0 +1,238 @@
+[
+  {
+    "label": "bruschetta",
+    "name": "Bruschetta",
+    "description": "Pane tostato condito con pomodoro, basilico e olio extravergine. È un antipasto semplice, fresco e leggero.",
+    "ingredients": [
+      "pane",
+      "pomodoro",
+      "basilico",
+      "olio extravergine di oliva",
+      "aglio"
+    ],
+    "nutrition": {
+      "portion": "150 g",
+      "calories_kcal": 260,
+      "protein_g": 7,
+      "carbohydrates_g": 39,
+      "fat_g": 9
+    },
+    "semantic_tags": "fresco, estivo, vegetariano, leggero, croccante, antipasto"
+  },
+  {
+    "label": "caprese_salad",
+    "name": "Insalata caprese",
+    "description": "Piatto freddo a base di pomodoro e mozzarella, adatto soprattutto alla stagione estiva.",
+    "ingredients": [
+      "pomodoro",
+      "mozzarella",
+      "basilico",
+      "olio extravergine di oliva"
+    ],
+    "nutrition": {
+      "portion": "250 g",
+      "calories_kcal": 380,
+      "protein_g": 20,
+      "carbohydrates_g": 10,
+      "fat_g": 28
+    },
+    "semantic_tags": "fresco, freddo, estivo, vegetariano, semplice, insalata"
+  },
+  {
+    "label": "cheesecake",
+    "name": "Cheesecake",
+    "description": "Dolce cremoso con una base di biscotti e una farcitura a base di formaggio.",
+    "ingredients": [
+      "biscotti",
+      "burro",
+      "formaggio cremoso",
+      "zucchero",
+      "uova"
+    ],
+    "nutrition": {
+      "portion": "120 g",
+      "calories_kcal": 390,
+      "protein_g": 7,
+      "carbohydrates_g": 36,
+      "fat_g": 25
+    },
+    "semantic_tags": "dolce, cremoso, dessert, ricco, freddo, goloso"
+  },
+  {
+    "label": "greek_salad",
+    "name": "Insalata greca",
+    "description": "Insalata fresca con pomodori, cetrioli, olive e feta. Ha un gusto saporito ma resta un piatto leggero.",
+    "ingredients": [
+      "pomodoro",
+      "cetriolo",
+      "feta",
+      "olive",
+      "cipolla"
+    ],
+    "nutrition": {
+      "portion": "300 g",
+      "calories_kcal": 320,
+      "protein_g": 11,
+      "carbohydrates_g": 18,
+      "fat_g": 23
+    },
+    "semantic_tags": "fresco, estivo, vegetariano, leggero, mediterraneo, insalata"
+  },
+  {
+    "label": "lasagna",
+    "name": "Lasagna",
+    "description": "Primo piatto al forno formato da strati di pasta, ragù, besciamella e formaggio.",
+    "ingredients": [
+      "pasta all'uovo",
+      "ragù",
+      "besciamella",
+      "parmigiano"
+    ],
+    "nutrition": {
+      "portion": "350 g",
+      "calories_kcal": 650,
+      "protein_g": 32,
+      "carbohydrates_g": 62,
+      "fat_g": 30
+    },
+    "semantic_tags": "caldo, sostanzioso, pasta, forno, tradizionale, pranzo della domenica"
+  },
+  {
+    "label": "paella",
+    "name": "Paella",
+    "description": "Piatto unico spagnolo a base di riso, zafferano e ingredienti che possono comprendere carne o pesce.",
+    "ingredients": [
+      "riso",
+      "zafferano",
+      "verdure",
+      "frutti di mare",
+      "pollo"
+    ],
+    "nutrition": {
+      "portion": "350 g",
+      "calories_kcal": 560,
+      "protein_g": 30,
+      "carbohydrates_g": 72,
+      "fat_g": 16
+    },
+    "semantic_tags": "riso, piatto unico, saporito, conviviale, pesce, speziato"
+  },
+  {
+    "label": "panna_cotta",
+    "name": "Panna cotta",
+    "description": "Dessert al cucchiaio dalla consistenza morbida, preparato con panna, zucchero e gelatina.",
+    "ingredients": [
+      "panna",
+      "zucchero",
+      "gelatina",
+      "vaniglia"
+    ],
+    "nutrition": {
+      "portion": "150 g",
+      "calories_kcal": 360,
+      "protein_g": 5,
+      "carbohydrates_g": 30,
+      "fat_g": 25
+    },
+    "semantic_tags": "dolce, cremoso, morbido, dessert, freddo, delicato"
+  },
+  {
+    "label": "pizza",
+    "name": "Pizza",
+    "description": "Impasto lievitato cotto ad alta temperatura e condito, nella versione classica, con pomodoro e mozzarella.",
+    "ingredients": [
+      "farina",
+      "acqua",
+      "lievito",
+      "pomodoro",
+      "mozzarella"
+    ],
+    "nutrition": {
+      "portion": "350 g",
+      "calories_kcal": 850,
+      "protein_g": 32,
+      "carbohydrates_g": 110,
+      "fat_g": 30
+    },
+    "semantic_tags": "forno, lievitato, saporito, informale, italiano, piatto unico"
+  },
+  {
+    "label": "ravioli",
+    "name": "Ravioli",
+    "description": "Pasta ripiena che può contenere ricotta, verdure o carne e viene servita con diversi condimenti.",
+    "ingredients": [
+      "pasta all'uovo",
+      "ricotta",
+      "spinaci",
+      "parmigiano"
+    ],
+    "nutrition": {
+      "portion": "250 g",
+      "calories_kcal": 520,
+      "protein_g": 23,
+      "carbohydrates_g": 68,
+      "fat_g": 17
+    },
+    "semantic_tags": "pasta, ripieno, caldo, tradizionale, delicato, primo piatto"
+  },
+  {
+    "label": "spaghetti_bolognese",
+    "name": "Spaghetti alla bolognese",
+    "description": "Spaghetti conditi con un sugo di carne e pomodoro, diffusi soprattutto nella cucina internazionale.",
+    "ingredients": [
+      "spaghetti",
+      "carne macinata",
+      "pomodoro",
+      "sedano",
+      "carota"
+    ],
+    "nutrition": {
+      "portion": "350 g",
+      "calories_kcal": 680,
+      "protein_g": 32,
+      "carbohydrates_g": 85,
+      "fat_g": 22
+    },
+    "semantic_tags": "pasta, carne, caldo, sostanzioso, sugo, primo piatto"
+  },
+  {
+    "label": "spaghetti_carbonara",
+    "name": "Spaghetti alla carbonara",
+    "description": "Primo piatto cremoso preparato con uova, pecorino, guanciale e pepe.",
+    "ingredients": [
+      "spaghetti",
+      "uova",
+      "pecorino",
+      "guanciale",
+      "pepe"
+    ],
+    "nutrition": {
+      "portion": "320 g",
+      "calories_kcal": 720,
+      "protein_g": 30,
+      "carbohydrates_g": 78,
+      "fat_g": 32
+    },
+    "semantic_tags": "pasta, cremoso, saporito, sostanzioso, caldo, primo piatto"
+  },
+  {
+    "label": "tiramisu",
+    "name": "Tiramisù",
+    "description": "Dessert italiano a strati con savoiardi al caffè e crema al mascarpone.",
+    "ingredients": [
+      "savoiardi",
+      "caffè",
+      "mascarpone",
+      "uova",
+      "cacao"
+    ],
+    "nutrition": {
+      "portion": "150 g",
+      "calories_kcal": 450,
+      "protein_g": 8,
+      "carbohydrates_g": 45,
+      "fat_g": 27
+    },
+    "semantic_tags": "dolce, cremoso, caffè, dessert, freddo, italiano"
+  }
+]
