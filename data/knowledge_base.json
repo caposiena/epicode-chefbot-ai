@@ -17,7 +17,12 @@
       "carbohydrates_g": 39,
       "fat_g": 9
     },
-    "semantic_tags": "fresco, estivo, vegetariano, leggero, croccante, antipasto"
+    "semantic_tags": "fresco, estivo, vegetariano, leggero, croccante, antipasto",
+    "search_examples": [
+      "vorrei un antipasto fresco e croccante",
+      "cerco qualcosa di semplice con pomodoro e pane",
+      "mi va uno spuntino estivo e leggero"
+    ]
   },
   {
     "label": "caprese_salad",
@@ -36,7 +41,12 @@
       "carbohydrates_g": 10,
       "fat_g": 28
     },
-    "semantic_tags": "fresco, freddo, estivo, vegetariano, semplice, insalata"
+    "semantic_tags": "fresco, freddo, estivo, vegetariano, semplice, insalata",
+    "search_examples": [
+      "vorrei un piatto freddo estivo con mozzarella",
+      "cerco qualcosa di fresco e semplice",
+      "mi va un piatto vegetariano senza cottura"
+    ]
   },
   {
     "label": "cheesecake",
@@ -56,7 +66,12 @@
       "carbohydrates_g": 36,
       "fat_g": 25
     },
-    "semantic_tags": "dolce, cremoso, dessert, ricco, freddo, goloso"
+    "semantic_tags": "dolce, cremoso, dessert, ricco, freddo, goloso",
+    "search_examples": [
+      "vorrei una torta dolce e cremosa",
+      "cerco un dessert ricco con formaggio",
+      "ho voglia di un dolce con base di biscotti"
+    ]
   },
   {
     "label": "greek_salad",
@@ -76,7 +91,12 @@
       "carbohydrates_g": 18,
       "fat_g": 23
     },
-    "semantic_tags": "fresco, estivo, vegetariano, leggero, mediterraneo, insalata"
+    "semantic_tags": "fresco, estivo, vegetariano, leggero, mediterraneo, insalata",
+    "search_examples": [
+      "vorrei qualcosa di fresco e leggero",
+      "cerco un'insalata estiva e vegetariana",
+      "mi va un piatto mediterraneo con verdure"
+    ]
   },
   {
     "label": "lasagna",
@@ -95,7 +115,12 @@
       "carbohydrates_g": 62,
       "fat_g": 30
     },
-    "semantic_tags": "caldo, sostanzioso, pasta, forno, tradizionale, pranzo della domenica"
+    "semantic_tags": "caldo, sostanzioso, pasta, forno, tradizionale, pranzo della domenica",
+    "search_examples": [
+      "vorrei un primo piatto caldo e sostanzioso",
+      "cerco della pasta al forno",
+      "mi va un piatto tradizionale della domenica"
+    ]
   },
   {
     "label": "paella",
@@ -115,7 +140,12 @@
       "carbohydrates_g": 72,
       "fat_g": 16
     },
-    "semantic_tags": "riso, piatto unico, saporito, conviviale, pesce, speziato"
+    "semantic_tags": "riso, piatto unico, saporito, conviviale, pesce, speziato",
+    "search_examples": [
+      "vorrei un piatto di riso con pesce",
+      "cerco un piatto unico saporito da condividere",
+      "mi va qualcosa con zafferano e frutti di mare"
+    ]
   },
   {
     "label": "panna_cotta",
@@ -134,7 +164,12 @@
       "carbohydrates_g": 30,
       "fat_g": 25
     },
-    "semantic_tags": "dolce, cremoso, morbido, dessert, freddo, delicato"
+    "semantic_tags": "dolce, cremoso, morbido, dessert, freddo, delicato",
+    "search_examples": [
+      "vorrei un dolce cremoso al cucchiaio",
+      "cerco un dessert morbido alla vaniglia",
+      "mi va un dolce a base di panna"
+    ]
   },
   {
     "label": "pizza",
@@ -154,7 +189,12 @@
       "carbohydrates_g": 110,
       "fat_g": 30
     },
-    "semantic_tags": "forno, lievitato, saporito, informale, italiano, piatto unico"
+    "semantic_tags": "forno, lievitato, saporito, informale, italiano, piatto unico",
+    "search_examples": [
+      "vorrei qualcosa di informale da condividere",
+      "cerco un piatto lievitato con pomodoro e mozzarella",
+      "ho voglia di pizza"
+    ]
   },
   {
     "label": "ravioli",
@@ -173,7 +213,12 @@
       "carbohydrates_g": 68,
       "fat_g": 17
     },
-    "semantic_tags": "pasta, ripieno, caldo, tradizionale, delicato, primo piatto"
+    "semantic_tags": "pasta, ripieno, caldo, tradizionale, delicato, primo piatto",
+    "search_examples": [
+      "vorrei della pasta ripiena",
+      "cerco un primo piatto tradizionale e delicato",
+      "mi va della pasta con ricotta e spinaci"
+    ]
   },
   {
     "label": "spaghetti_bolognese",
@@ -193,7 +238,12 @@
       "carbohydrates_g": 85,
       "fat_g": 22
     },
-    "semantic_tags": "pasta, carne, caldo, sostanzioso, sugo, primo piatto"
+    "semantic_tags": "pasta, carne, caldo, sostanzioso, sugo, primo piatto",
+    "search_examples": [
+      "vorrei un primo piatto di pasta con carne",
+      "cerco qualcosa di caldo e sostanzioso con il sugo",
+      "mi vanno degli spaghetti al ragù"
+    ]
   },
   {
     "label": "spaghetti_carbonara",
@@ -213,7 +263,12 @@
       "carbohydrates_g": 78,
       "fat_g": 32
     },
-    "semantic_tags": "pasta, cremoso, saporito, sostanzioso, caldo, primo piatto"
+    "semantic_tags": "pasta, cremoso, saporito, sostanzioso, caldo, primo piatto",
+    "search_examples": [
+      "vorrei un primo di pasta cremoso e saporito",
+      "cerco qualcosa con guanciale uova e pecorino",
+      "mi va una carbonara sostanziosa"
+    ]
   },
   {
     "label": "tiramisu",
@@ -233,6 +288,11 @@
       "carbohydrates_g": 45,
       "fat_g": 27
     },
-    "semantic_tags": "dolce, cremoso, caffè, dessert, freddo, italiano"
+    "semantic_tags": "dolce, cremoso, caffè, dessert, freddo, italiano",
+    "search_examples": [
+      "vorrei un dolce al caffè",
+      "cerco un dessert cremoso con mascarpone",
+      "mi va un dolce italiano al cucchiaio"
+    ]
   }
 ]
