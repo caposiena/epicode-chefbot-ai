@@ -62,6 +62,5 @@ ENV/
 .streamlit/secrets.toml
 
 # File generati dal progetto
-models/*.keras
 models/*.h5
 tensorflow_datasets/
