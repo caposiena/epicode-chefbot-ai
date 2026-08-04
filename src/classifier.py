@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 
+import keras
 import numpy as np
-import tensorflow as tf
 from PIL import Image
 
 
@@ -27,7 +27,7 @@ class FoodClassifier:
         if not classes_file.exists():
             raise FileNotFoundError("File delle classi non trovato.")
 
-        self.model = tf.keras.models.load_model(model_file)
+        self.model = keras.models.load_model(model_file)
 
         with classes_file.open("r", encoding="utf-8") as file:
             self.class_names = json.load(file)
